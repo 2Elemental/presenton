@@ -241,6 +241,10 @@ def set_image_provider_env(value):
     os.environ["IMAGE_PROVIDER"] = value
 
 
+def set_promptedit_api_key_env(value):
+    os.environ["PROMPTEDIT_API_KEY"] = value
+
+
 def set_pixabay_api_key_env(value):
     os.environ["PIXABAY_API_KEY"] = value
 

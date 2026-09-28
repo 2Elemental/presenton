@@ -68,6 +68,7 @@ from utils.get_env import (
     get_user_config_path_env,
     get_image_provider_env,
     get_pixabay_api_key_env,
+    get_promptedit_api_key_env,
     get_extended_reasoning_env,
     get_llm_generation_profile_env,
     get_llm_max_output_tokens_env,
@@ -170,6 +171,7 @@ from utils.set_env import (
     set_pexels_api_key_env,
     set_image_provider_env,
     set_pixabay_api_key_env,
+    set_promptedit_api_key_env,
     set_web_grounding_env,
     set_web_search_provider_env,
     set_web_search_max_results_env,
@@ -308,6 +310,7 @@ def get_user_config():
             else (parse_bool_or_none(get_disable_image_generation_env()) or False)
         ),
         PIXABAY_API_KEY=existing_config.PIXABAY_API_KEY or get_pixabay_api_key_env(),
+        PROMPTEDIT_API_KEY=existing_config.PROMPTEDIT_API_KEY or get_promptedit_api_key_env(),
         PEXELS_API_KEY=existing_config.PEXELS_API_KEY or get_pexels_api_key_env(),
         COMFYUI_URL=existing_config.COMFYUI_URL or get_comfyui_url_env(),
         COMFYUI_WORKFLOW=existing_config.COMFYUI_WORKFLOW or get_comfyui_workflow_env(),
@@ -516,6 +519,8 @@ def update_env_with_user_config():
         set_image_provider_env(user_config.IMAGE_PROVIDER)
     if user_config.PIXABAY_API_KEY:
         set_pixabay_api_key_env(user_config.PIXABAY_API_KEY)
+    if user_config.PROMPTEDIT_API_KEY:
+        set_promptedit_api_key_env(user_config.PROMPTEDIT_API_KEY)
     if user_config.PEXELS_API_KEY:
         set_pexels_api_key_env(user_config.PEXELS_API_KEY)
     if user_config.COMFYUI_URL:

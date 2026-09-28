@@ -334,6 +334,10 @@ def get_image_provider_env():
     return os.getenv("IMAGE_PROVIDER")
 
 
+def get_promptedit_api_key_env():
+    return os.getenv("PROMPTEDIT_API_KEY")
+
+
 def get_pixabay_api_key_env():
     return os.getenv("PIXABAY_API_KEY")
 

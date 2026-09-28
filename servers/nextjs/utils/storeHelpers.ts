@@ -261,6 +261,11 @@ export const getLLMConfigValidationError = (
           return "Pixabay API key is required.";
         }
         break;
+      case "promptedit":
+        if (!isProvided(llmConfig.PROMPTEDIT_API_KEY?.trim())) {
+          return "PromptEdit MCP token is required.";
+        }
+        break;
       case "dall-e-3":
         if (!isProvided(llmConfig.OPENAI_API_KEY)) {
           return "OpenAI API key is required for DALL·E 3.";

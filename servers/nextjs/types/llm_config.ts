@@ -91,6 +91,7 @@ export interface LLMConfig {
   IMAGE_PROVIDER?: string;
   PEXELS_API_KEY?: string;
   PIXABAY_API_KEY?: string;
+  PROMPTEDIT_API_KEY?: string;
 
   // ComfyUI
   COMFYUI_URL?: string;

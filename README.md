@@ -487,15 +487,16 @@ Docker images install the default spaCy model (`en_core_web_sm`) during build so
 
 #### Image generation
 
-These variables match `docker-compose.yml`. **`IMAGE_PROVIDER`** selects the backend (`pexels`, `pixabay`, `gemini_flash`, `nanobanana_pro`, `dall-e-3`, `gpt-image-1.5`, `comfyui`, `open_webui`). Use **OPENAI_API_KEY** for OpenAI image modes and **GOOGLE_API_KEY** for Gemini image modes (same keys as the LLM section).
+**`IMAGE_PROVIDER`** selects the backend. Use **OPENAI_API_KEY** for OpenAI image modes and **GOOGLE_API_KEY** for Gemini image modes (same keys as the LLM section).
 
 | Variable | Values / default | Purpose |
 | --- | --- | --- |
 | **DISABLE_IMAGE_GENERATION** | `true` / `false` | Disables slide image generation. |
 | **ENABLE_PARALLEL_IMAGE_GENERATION** | `true` (default), `false` | Allows concurrent image-provider requests. Set to `false` for providers with strict rate limits. |
-| **IMAGE_PROVIDER** | `pexels`, `pixabay`, `gemini_flash`, `nanobanana_pro`, `dall-e-3`, `gpt-image-1.5`, `comfyui`, `open_webui`, `openai_compatible` | Selects the image backend. |
+| **IMAGE_PROVIDER** | `pexels`, `pixabay`, `gemini_flash`, `nanobanana_pro`, `dall-e-3`, `gpt-image-1.5`, `comfyui`, `open_webui`, `openai_compatible`, `promptedit` | Selects the image backend. |
 | **PEXELS_API_KEY** | Required for `IMAGE_PROVIDER=pexels` | Pexels stock-image API key. |
 | **PIXABAY_API_KEY** | Required for `IMAGE_PROVIDER=pixabay` | Pixabay stock-image API key. |
+| **PROMPTEDIT_API_KEY** | Required for `IMAGE_PROVIDER=promptedit` | Bearer token from [PromptEdit's MCP account settings](https://promptedit.com/account/mcp?client=other). Generates one Nano Banana Pro image at 16:9, 2K through `https://promptedit.com/mcp`, charges PromptEdit credits, and stores the published image in Presenton's app data. |
 | **DALL_E_3_QUALITY** | `standard` (default), `hd` | DALL-E 3 image quality. |
 | **GPT_IMAGE_1_5_QUALITY** | `low`, `medium` (default), `high` | GPT Image 1.5 image quality. |
 | **COMFYUI_URL** / **COMFYUI_WORKFLOW** | Required for `IMAGE_PROVIDER=comfyui` | Self-hosted ComfyUI endpoint and workflow JSON. |

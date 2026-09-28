@@ -38,6 +38,7 @@ from utils.image_provider import (
     is_comfyui_selected,
     is_open_webui_selected,
     is_openai_compatible_selected,
+    is_promptedit_selected,
 )
 from utils.asset_directory_utils import absolute_fastapi_asset_url
 from utils.image_generation_error import normalize_image_generation_error
@@ -105,7 +106,14 @@ class ImageGenerationService:
             return self.generate_image_open_webui
         elif is_openai_compatible_selected():
             return self.generate_image_openai_compatible
+        elif is_promptedit_selected():
+            return self.generate_image_promptedit
         return None
+
+    async def generate_image_promptedit(self, prompt: str, output_directory: str) -> str:
+        from services.promptedit_image_service import generate_promptedit_image
+
+        return await generate_promptedit_image(prompt, output_directory)
 
     def is_stock_provider_selected(self):
         return is_pixels_selected() or is_pixabay_selected()

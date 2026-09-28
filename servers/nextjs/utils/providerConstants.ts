@@ -89,6 +89,16 @@ export const WEB_SEARCH_PROVIDERS: Record<string, WebSearchProviderOption> = {
 };
 
 export const IMAGE_PROVIDERS: Record<string, ImageProviderOption> = {
+  promptedit: {
+    value: "promptedit",
+    label: "PromptEdit",
+    description: "Nano Banana Pro images via PromptEdit MCP (16:9, 2K); uses PromptEdit credits",
+    icon: "/providers/custom.svg",
+    requiresApiKey: true,
+    apiKeyField: "PROMPTEDIT_API_KEY",
+    apiKeyFieldLabel: "PromptEdit MCP token",
+    getApiKeyUrl: "https://promptedit.com/account/mcp?client=other",
+  },
   pexels: {
     value: "pexels",
     label: "Pexels",

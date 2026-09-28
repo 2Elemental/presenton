@@ -95,6 +95,7 @@ class UserConfig(BaseModel):
     IMAGE_PROVIDER: Optional[str] = None
     PEXELS_API_KEY: Optional[str] = None
     PIXABAY_API_KEY: Optional[str] = None
+    PROMPTEDIT_API_KEY: Optional[str] = None
 
     # ComfyUI
     COMFYUI_URL: Optional[str] = None
